@@ -3,7 +3,7 @@
 {
 	"type" : "object",
 	"$schema": "http://json-schema.org/draft-04/schema",
-	"required" : [ "general", "video", "adventure", "pathfinder", "battle", "server", "logging", "launcher", "session" ],
+	"required" : [ "general", "video", "adventure", "pathfinder", "battle", "server", "logging", "launcher" ],
 	"definitions" : {
 		"logLevelEnum" : {
 			"type" : "string",
@@ -17,7 +17,7 @@
 			"type" : "object",
 			"default": {},
 			"additionalProperties" : false,
-			"required" : [ "playerName", "showfps", "music", "sound", "encoding", "swipe", "saveRandomMaps" ],
+			"required" : [ "playerName", "showfps", "music", "sound", "encoding", "swipe", "saveRandomMaps", "saveFrequency" ],
 			"properties" : {
 				"playerName" : {
 					"type":"string",
@@ -46,6 +46,10 @@
 				"saveRandomMaps" : {
 					"type" : "boolean",
 					"default" : false
+				},
+				"saveFrequency" : {
+					"type" : "number",
+					"default" : 1
 				}
 			}
 		},
@@ -357,18 +361,6 @@
 				"autoCheckRepositories" : {
 					"type" : "boolean",
 					"default" : true
-				}
-			}
-		},
-		"session" : {
-			"type" : "object",
-			"default": {},
-			"additionalProperties" : false,
-			"required" : [ "savefrequency" ],
-			"properties" : {
-				"savefrequency" : {
-					"type" : "number",
-					"default" : 1
 				}
 			}
 		}

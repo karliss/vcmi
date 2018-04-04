@@ -311,42 +311,45 @@ int main(int argc, char * argv[])
 	preinitDLL(::console);
 	settings.init();
 	Settings session = settings.write["session"];
-	auto setSessionBool = [&session](std::string key, std::string arg) {
+	auto setSettingBool = [](std::string key, std::string arg) {
+		Settings s = settings.write(vstd::split(key, "/"));
 		if(::vm.count(arg))
-			session[key].Bool() = true;
-		else if(session[key].isNull())
-			session[key].Bool() = false;
+			s->Bool() = true;
+		else if(s->isNull())
+			s->Bool() = false;
 	};
-	auto setSessionInteger = [&session](std::string key, std::string arg, si64 defaultValue) {
+	auto setSettingInteger = [](std::string key, std::string arg, si64 defaultValue) {
+		Settings s = settings.write(vstd::split(key, "/"));
 		if(::vm.count(arg))
-			session[key].Integer() = ::vm[arg].as<si64>();
-		else if(session[key].isNull())
-			session[key].Integer() = defaultValue;
+			s->Integer() = ::vm[arg].as<si64>();
+		else if(s->isNull())
+			s->Integer() = defaultValue;
 	};
-	auto setSessionString = [&session](std::string key, std::string arg, std::string defaultValue) {
+	auto setSettingString = [](std::string key, std::string arg, std::string defaultValue) {
+		Settings s = settings.write(vstd::split(key, "/"));
 		if(::vm.count(arg))
-			session[key].String() = ::vm[arg].as<std::string>();
-		else if(session[key].isNull())
-			session[key].String() = defaultValue;
+			s->String() = ::vm[arg].as<std::string>();
+		else if(s->isNull())
+			s->String() = defaultValue;
 	};
 
-	setSessionBool("onlyai", "onlyAI");
+	setSettingBool("session/onlyai", "onlyAI");
 	if(vm.count("headless"))
 	{
 		session["headless"].Bool() = true;
 		session["onlyai"].Bool() = true;
 	}
 	// Server settings
-	setSessionBool("donotstartserver", "donotstartserver");
+	setSettingBool("session/donotstartserver", "donotstartserver");
 
 	// Shared memory options
-	setSessionBool("disable-shm", "disable-shm");
-	setSessionBool("enable-shm-uuid", "enable-shm-uuid");
+	setSettingBool("session/disable-shm", "disable-shm");
+	setSettingBool("session/enable-shm-uuid", "enable-shm-uuid");
 
 	// Init special testing settings
-	setSessionInteger("serverport", "serverport", 0);
-	setSessionString("saveprefix", "saveprefix", "");
-	setSessionInteger("savefrequency", "savefrequency", 1);
+	setSettingInteger("session/serverport", "serverport", 0);
+	setSettingString("session/saveprefix", "saveprefix", "");
+	setSettingInteger("general/saveFrequency", "savefrequency", 1);
 
 	// Initialize logging based on settings
 	logConfig.configure();

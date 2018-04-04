@@ -168,7 +168,7 @@ void CPlayerInterface::yourTurn()
 		adventureInt->selection = nullptr;
 
 		std::string prefix = settings["session"]["saveprefix"].String();
-		int frequency = settings["session"]["savefrequency"].Integer();
+		int frequency = settings["general"]["saveFrequency"].Integer();
 		if (firstCall)
 		{
 			if (howManyPeople == 1)
