@@ -124,7 +124,7 @@ set(lib_SRCS
 		spells/effects/RemoveObstacle.cpp
 		spells/effects/Sacrifice.cpp
 
-		${CMAKE_HOME_DIRECTORY}/include/vstd/StringUtils.cpp
+		vstd/StringUtils.cpp
 
 		CAndroidVMHelper.cpp
 		CArtHandler.cpp

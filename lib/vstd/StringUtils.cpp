@@ -1,6 +1,7 @@
-#include "StringUtils.h"
+#include <vstd/StringUtils.h>
 
-namespace vstd {
+namespace vstd
+{
 
 	DLL_LINKAGE std::vector<std::string> split(std::string s, std::string separators)
 	{
