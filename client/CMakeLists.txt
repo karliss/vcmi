@@ -43,8 +43,6 @@ set(client_SRCS
 		windows/InfoWindows.cpp
 		windows/QuickRecruitmentWindow.cpp
 
-		${CMAKE_HOME_DIRECTORY}/include/vstd/StringUtils.cpp
-
 		CBitmapHandler.cpp
 		CreatureCostBox.cpp
 		CGameInfo.cpp
