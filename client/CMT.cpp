@@ -54,6 +54,7 @@
 #include "../lib/StringConstants.h"
 #include "../lib/CPlayerState.h"
 #include "gui/CAnimation.h"
+#include <vstd/StringUtils.h>
 
 #ifdef VCMI_WINDOWS
 #include "SDL_syswm.h"

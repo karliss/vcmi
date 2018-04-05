@@ -5,7 +5,6 @@ include_directories(${Boost_INCLUDE_DIRS} ${ZLIB_INCLUDE_DIR} ${FFMPEG_INCLUDE_D
 set(client_SRCS
 		StdInc.cpp
 		../CCallback.cpp
-		../Global.cpp
 
 		battle/CBattleAnimations.cpp
 		battle/CBattleInterfaceClasses.cpp
@@ -43,6 +42,8 @@ set(client_SRCS
 		windows/GUIClasses.cpp
 		windows/InfoWindows.cpp
 		windows/QuickRecruitmentWindow.cpp
+
+		${CMAKE_HOME_DIRECTORY}/include/vstd/StringUtils.cpp
 
 		CBitmapHandler.cpp
 		CreatureCostBox.cpp

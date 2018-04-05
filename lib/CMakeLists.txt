@@ -124,6 +124,8 @@ set(lib_SRCS
 		spells/effects/RemoveObstacle.cpp
 		spells/effects/Sacrifice.cpp
 
+		${CMAKE_HOME_DIRECTORY}/include/vstd/StringUtils.cpp
+
 		CAndroidVMHelper.cpp
 		CArtHandler.cpp
 		CBonusTypeHandler.cpp
@@ -168,6 +170,7 @@ set(lib_HEADERS
 		${CMAKE_HOME_DIRECTORY}/include/vstd/CLoggerBase.h
 		${CMAKE_HOME_DIRECTORY}/include/vstd/ContainerUtils.h
 		${CMAKE_HOME_DIRECTORY}/include/vstd/RNG.h
+		${CMAKE_HOME_DIRECTORY}/include/vstd/StringUtils.h
 		StdInc.h
 		../Global.h
 

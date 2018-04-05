@@ -1,4 +1,4 @@
-#include "Global.h"
+#include "StringUtils.h"
 
 namespace vstd {
 

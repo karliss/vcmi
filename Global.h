@@ -721,8 +721,6 @@ namespace vstd
 		return false;
 	}
 
-	std::vector<std::string> split(std::string s, std::string separators);
-
 	using boost::math::round;
 }
 using vstd::operator-=;
